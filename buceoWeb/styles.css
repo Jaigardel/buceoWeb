@@ -1,0 +1,143 @@
+:root {
+    --color-primary: #26547C;
+    --color-secondary: #EF476F;
+    --color-accent: #FFD166;
+    --color-background: #06D6A0;
+    --color-text: #FFFCF9;
+    --color-hover: #FF6B6B;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-text);
+    color: var(--color-primary);
+}
+
+header {
+    text-align: center;
+    background-color: var(--color-primary);
+    padding: 20px;
+    position: relative;
+}
+
+#logo {
+    width: 50px;
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+nav {
+    background-color: var(--color-secondary);
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    color: var(--color-text);
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--color-hover);
+}
+
+.hero {
+    position: relative;
+    background-color: var(--color-accent);
+    overflow: hidden;
+}
+
+.hero img {
+    width: 100%;
+    display: block;
+}
+
+#heroDiv {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    width: 25%;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    color: var(--color-text);
+    border-radius: 10px;
+    animation: parpadeo 10s infinite;
+}
+
+@keyframes parpadeo {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+main {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    background-color: var(--color-background);
+    padding: 20px;
+}
+
+.elementoMain {
+    text-align: center;
+    background-color: var(--color-text);
+    width: 30%;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.elementoMain img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.elementoMain:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+footer {
+    text-align: center;
+    background-color: var(--color-primary);
+    color: var(--color-text);
+    padding: 20px;
+}
+
+footer p {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+@media (max-width: 768px) {
+    #heroDiv {
+        width: 80%;
+        right: 10%;
+        top: 20%;
+        transform: translateY(0);
+    }
+
+    .elementoMain {
+        width: 45%;
+    }
+}
+
+@media (max-width: 480px) {
+    .elementoMain {
+        width: 90%;
+    }
+
+    nav a {
+        display: block;
+        margin: 10px 0;
+    }
+}
